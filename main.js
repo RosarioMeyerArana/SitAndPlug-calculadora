@@ -8,6 +8,13 @@ let inputDias = document.getElementById("inputDias").value;
 let tipoCrecimiento = document.getElementById("tipoCrecimiento");
 let crecimientoInput = tipoCrecimiento.value
 
+let inputEmpleadosM = document.getElementById('inputEmpleadosM').value;
+
+let inputBarrioM = document.getElementById("inputBarrioM").value;
+let inputDiasM = document.getElementById("inputDiasM").value;
+let tipoCrecimientoM = document.getElementById("tipoCrecimientoM");
+
+
 
 let tamanoOficina
 let inversionInicial
@@ -43,38 +50,26 @@ const todos = () =>{
     cuantosDias = tomoDias.value
 }
 
-// const creci = () =>{
-//     return inputCrecimiento = tipoCrecimiento.value
-//     return inputDias
-//     return inputBarrio
-//     return inputEmpleados
-// }
-
-// const emple = () => {
-//     cuantosEmpleados = tomoEmpleados.value
-// }
-
-// const barri = () => {
-//     queBarrio = tomoBarrio.value
-// }
-
-// const dias = () => {
-//     cuantosDias = tomoDias.value
-// }
-
+const todosM = () =>{
+    inputCrecimiento = tipoCrecimientoM.value
+    cuantosEmpleados = tomoEmpleadosM.value
+    queBarrio = tomoBarrioM.value
+    cuantosDias = tomoDiasM.value
+}
 
 
 // CALCULO TAMAÑO OFICINA //
 
 function calculoTamano(tomoEmpleados, tomoBarrio, tomoDias, tipoCrecimiento){
 
-            let calculo = (5 - tomoDias) / 5
+        let calculo = (5 - tomoDias) / 5
         
-            capacidadReal = tomoEmpleados * calculo
-            cantidadEmpleados = capacidadReal
+        capacidadReal = tomoEmpleados * calculo
+        cantidadEmpleados = capacidadReal
         
 
-            precioPersonaSit = 250
+        precioPersonaSit = 250
+
         let anio = 12
 
         let empleados = tomoEmpleados
@@ -211,10 +206,9 @@ function respuestaAhorro(alquilerTradicional1, gastoOperativo, alquilerSit){
    let ahorroTres = ahorroAnio*3;
 
      
-    respuesta.innerHTML=`   <div class="container-ahorro"
-                            <p class="titulo-ahorro">AHORRO TOTAL</p>
-                            <div>&#9989 Total ahorro anual: € ${ahorroAnio.toLocaleString('es-ES')}</div>
-                            <div>&#9989 Total ahorro a 3 años: € ${ahorroTres.toLocaleString('es-ES')}</div>
+    respuesta.innerHTML+=`   <div class="container-ahorro"
+                                <div style="color: black">&#9989 Total ahorro anual: € ${ahorroAnio.toLocaleString('es-ES')}</div>
+                                <div style="color: black">&#9989 Total ahorro a 3 años: € ${ahorroTres.toLocaleString('es-ES')}</div>
                             </div>
                             `
 }

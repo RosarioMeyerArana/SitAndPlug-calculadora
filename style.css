@@ -6,14 +6,10 @@
     font-size: 15px;
 }
 
-.titulo-ahorro{
-    font-size: 30px;
-}
 
-.container-ahorro{
-    border: 1.5px solid green;
+#resultados{
+    border: 2px solid #33d298;
     padding: 1rem;
-
 }
 
 
