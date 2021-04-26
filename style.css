@@ -1,0 +1,43 @@
+.texto-aclaracion{
+    font-size: 10px;
+}
+
+.anio{
+    font-size: 15px;
+}
+
+.titulo-ahorro{
+    font-size: 30px;
+}
+
+.container-ahorro{
+    border: 1.5px solid green;
+    padding: 1rem;
+
+}
+
+
+/* PANTALLA XS */
+@media (max-width: 575.98px) {
+
+  }
+
+  /* PANTALLA S */
+  @media (min-width: 576px) and (max-width: 767.98px) {
+    
+  }
+
+  /* PANTALLA M */
+  @media (min-width: 768px) and (max-width: 991.98px) {
+    
+  }
+
+  /* PANTALLA L */
+  @media (min-width: 992px) and (max-width: 1199.98px) {
+    
+  }
+
+  /* PANTALLA XL */
+  @media (min-width: 1199.99px) {
+    
+  }
