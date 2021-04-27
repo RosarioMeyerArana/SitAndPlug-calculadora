@@ -80,7 +80,26 @@ body{
 
   /* PANTALLA L */
   @media (min-width: 992px) and (max-width: 1199.98px) {
-    
+    .texto-aclaracion{
+         margin-top: 20px; 
+        font-size: 11px;
+    }
+
+    .div-form{
+        margin: 0;
+    }
+    .div-form label{
+        font-size: 12.5px !important;
+        margin-top: 10% !important
+    }
+
+    .container-chart{
+        margin: 0 !important;
+    }
+
+    #resultados{
+        width: 70%;
+    }
   }
 
   /* PANTALLA XL */
