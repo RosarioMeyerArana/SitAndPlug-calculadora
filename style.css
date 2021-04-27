@@ -30,12 +30,52 @@ body{
 
   /* PANTALLA S */
   @media (min-width: 576px) and (max-width: 767.98px) {
-    
+    .section-mobile{
+        position: relative;
+        left: -45px;
+    }
+
+    .container-mobile{
+        margin: 0;  
+    }
+
+    .form-mobile{
+        font-size: 11px;
+        margin-top: 25px;
+    }
+
+    .div-chart-mobile{
+        width: 150%;
+    }
   }
 
   /* PANTALLA M */
   @media (min-width: 768px) and (max-width: 991.98px) {
-    
+    .div-form{
+        margin: 0;
+        margin-right: 0 !important;
+    }
+
+    .container-chart{
+        margin: 0;
+    }
+
+    .div-container{
+        display: flex;
+        justify-content: flex-start !important;
+    }
+
+    .div-chart{
+        padding-top: 10%;
+        width: 120%;
+        height: 45.5vh !important;
+    }
+
+    .texto-aclaracion{
+        margin-top: 20px;
+        font-size: 12px;
+    }
+
   }
 
   /* PANTALLA L */
