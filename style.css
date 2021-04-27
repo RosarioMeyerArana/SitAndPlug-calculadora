@@ -19,13 +19,38 @@ body{
 }
 
 #resultados{
+    font-family: 'Montserrat', sans-serif;
     border: 2px solid #33d298;
     padding: 1rem;
 }
 
+.div-form{
+    font-family: 'Montserrat', sans-serif;
+}
+
+.div-form label{
+    font-weight: bold;
+}
+
+.form-mobile{
+    font-family: 'Montserrat', sans-serif;
+}
+
+.form-mobile label{
+    font-weight: bold;
+}
+
+
+/* ********** MEDIAQUERIES ********** */
+
 
 /* PANTALLA XS */
 @media (max-width: 575.98px) {
+    .section-mobile{
+        margin-left: 10px
+
+    }
+
     #resultados{
         width: 80%;
     }
@@ -35,7 +60,8 @@ body{
   @media (min-width: 576px) and (max-width: 767.98px) {
     .section-mobile{
         position: relative;
-        left: -45px;
+        left: -40px;
+
     }
 
     .container-mobile{
@@ -45,6 +71,18 @@ body{
     .form-mobile{
         font-size: 11px;
         margin-top: 25px;
+    }
+
+    .form-mobile input{
+        font-size: .8rem;
+    }
+
+    .form-mobile select{
+        font-size: .8rem;
+    }
+
+    .form-label{
+        font-size: .65rem;
     }
 
     .div-chart-mobile{
@@ -59,6 +97,10 @@ body{
         margin-right: 0 !important;
     }
 
+    .div-form label{
+        font-size: .9rem;
+    }
+
     .container-chart{
         margin: 0;
     }
@@ -69,9 +111,9 @@ body{
     }
 
     .div-chart{
-        padding-top: 10%;
+        padding-top: 6%;
         width: 120%;
-        height: 45.5vh !important;
+        height: 43.5vh !important;
     }
 
     .texto-aclaracion{
@@ -84,7 +126,7 @@ body{
   /* PANTALLA L */
   @media (min-width: 992px) and (max-width: 1199.98px) {
     .texto-aclaracion{
-         margin-top: 20px; 
+         margin-top: 25px; 
         font-size: 11px;
     }
 
@@ -92,8 +134,20 @@ body{
         margin: 0;
     }
     .div-form label{
-        font-size: 12.5px !important;
-        margin-top: 10% !important
+        font-size: 12px !important;
+        margin-top: 10% !important;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: bold;
+        
+    }
+
+    .div-form input, select {
+        font-family: 'Montserrat', sans-serif;
+        font-size: .8rem;
+    }
+
+    .div-form select{
+        font-size: .8rem;
     }
 
     .container-chart{
@@ -102,6 +156,10 @@ body{
 
     #resultados{
         width: 70%;
+        font-family: 'Montserrat', sans-serif;
+    }
+    .titulo-ahorro{
+        font-weight: bold;
     }
   }
 
