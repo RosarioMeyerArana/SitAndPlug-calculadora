@@ -1,6 +1,7 @@
 *{
     margin: 0;
-
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body{
@@ -9,10 +10,12 @@ body{
 
 .texto-aclaracion{
     font-size: 10px;
+    font-family: 'Montserrat', sans-serif !important;
 }
 
 .anio{
     font-size: 15px;
+    font-family: 'Montserrat', sans-serif !important;
 }
 
 #resultados{
@@ -106,27 +109,33 @@ body{
   @media (min-width: 1199.99px) {
     .texto-aclaracion{
         margin-top: 3% !important; 
-       font-size: 13px;
+       font-size: 12px;
    }
 
     .div-form{
     margin: 0;
-    margin-top: 2rem;
+    /* margin-top: 1rem; */
     }
 
     .div-form label :first-child{
         margin-top: 10% !important;
+        font-family: 'Montserrat', sans-serif !important;
+        
     }
 
     .div-form label{
-        font-size: 14px !important;   
+        font-size: .925rem !important; 
+        font-family: 'Montserrat', sans-serif !important;  
+        font-weight: bold;
     }
     .div-form input {
         margin-bottom: 1rem !important;
+        font-family: 'Montserrat', sans-serif !important;
     }
 
     .div-form select{
         margin-bottom: 1rem !important;
+        font-family: 'Montserrat', sans-serif !important;
     }
     
 
@@ -136,6 +145,11 @@ body{
 
     #resultados{
         width: 66%;
+        font-family: 'Montserrat', sans-serif;
+    }
+    .titulo-ahorro{
+        font-family: 'Montserrat', sans-serif;
+        font-weight: bold;
     }
 
   }
