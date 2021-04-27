@@ -48,11 +48,14 @@ body{
 @media (max-width: 575.98px) {
     .section-mobile{
         margin-left: 10px
-
     }
 
     #resultados{
         width: 80%;
+    }
+
+    .texto-aclaracion{
+        font-size: 12px;
     }
   }
 
