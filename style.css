@@ -104,5 +104,38 @@ body{
 
   /* PANTALLA XL */
   @media (min-width: 1199.99px) {
+    .texto-aclaracion{
+        margin-top: 3% !important; 
+       font-size: 13px;
+   }
+
+    .div-form{
+    margin: 0;
+    margin-top: 2rem;
+    }
+
+    .div-form label :first-child{
+        margin-top: 10% !important;
+    }
+
+    .div-form label{
+        font-size: 14px !important;   
+    }
+    .div-form input {
+        margin-bottom: 1rem !important;
+    }
+
+    .div-form select{
+        margin-bottom: 1rem !important;
+    }
     
+
+    .container-chart{
+        margin: 0 !important;
+    }
+
+    #resultados{
+        width: 66%;
+    }
+
   }
