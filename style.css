@@ -20,7 +20,7 @@ body{
 
 #resultados{
     font-family: 'Montserrat', sans-serif;
-    border: 2px solid #33d298;
+    font-weight: bold;
     padding: 1rem;
 }
 
@@ -46,16 +46,16 @@ body{
 
 /* PANTALLA XS */
 @media (max-width: 575.98px) {
-    .section-mobile{
-        margin-left: 10px
-    }
 
     #resultados{
-        width: 80%;
+        width: 90%;
     }
 
     .texto-aclaracion{
         font-size: 12px;
+    }
+    .titulo-ahorro{
+        font-weight: bolder;
     }
   }
 
@@ -162,7 +162,7 @@ body{
         font-family: 'Montserrat', sans-serif;
     }
     .titulo-ahorro{
-        font-weight: bold;
+        font-weight: bolder;
     }
   }
 
@@ -210,7 +210,7 @@ body{
     }
     .titulo-ahorro{
         font-family: 'Montserrat', sans-serif;
-        font-weight: bold;
+        font-weight: bolder;
     }
 
   }
