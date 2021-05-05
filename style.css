@@ -4,6 +4,11 @@
     box-sizing: border-box;
 }
 
+#myChart{
+    width: 100% !important;
+    height: 50% !important;
+}
+
 body{
     margin: auto;
 }
@@ -64,7 +69,6 @@ body{
     .section-mobile{
         position: relative;
         left: -40px;
-
     }
 
     .container-mobile{

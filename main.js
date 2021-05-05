@@ -255,24 +255,44 @@ var myChart = new Chart(ctx, {
     ]
     },
 
-    // onResize: function(myChart, size) {
-
-    //     if (size.height < 400) {
-    //          options:
-    //          {
-    //              scales:
-    //              {
-    //                  xAxes: [{
-    //                      ticks:{
-    //                          display: false
-    //                      }
-     
-    //                  }];
-    //              }
-    //          }
-    //       }},
+    
 
     options: {
+        onResize: function(myChart, size) {
+
+            var showTicks = (size.height < 140) ? false : true;
+       
+            myChart.options = {
+                scales: {
+                    x: {
+                        grid:{
+                            display: false
+                        },
+                        stacked: true
+                    },
+                    y: {
+                        grid:{
+                            display: false
+                        },
+                        major: true,
+                        ticks: {
+                            min: 0,
+                            count: 5
+                        },
+                        
+                        beginAtZero: true,
+                        stacked: true
+                    }    
+                },
+                   plugins:{
+                       legend:{
+                        display: false
+                       }
+                   }
+            };
+       
+         },
+
         scales: {
             x: {
                 grid:{
@@ -297,29 +317,25 @@ var myChart = new Chart(ctx, {
             plugins: {
                 legend: {
                     position: 'right',
-                    font: {
-                        size: 6
-                    },
                     labels:{
-                        boxWidth: 10
-                    }
+                        boxWidth: 10,
+                        font: {
+                            size: 10
+                        },
+                    },
+                    maxWidth:170
                 },
-                tooltip:{
-                    filter: function (dataset, data) {
-                            let valor0 = myChart.data.datasets[0].data[1]
-                            let valor1 = myChart.data.datasets[1].data[1]
-                            let valor2 = myChart.data.datasets[3].data[1]
-                        console.log(valor0)
-                        console.log(valor1)
-                        console.log(valor2)
+                // tooltip:{
+                //     filter: function (dataset, data) {
+                           
 
-                                  if ((valor0 == 0) || (valor1 == 0) || (valor2 == 0)){
-                                          return false;
-                                      } else {
-                                          return true;
-                                      }
-                                 }
-                        }
+                //                   if ((valor0 == 0) || (valor1 == 0) || (valor2 == 0)){
+                //                           return false;
+                //                       } else {
+                //                           return true;
+                //                       }
+                //                  }
+                //         }
             },
         //  tooltips: {
         //         mode: 'index',
@@ -360,7 +376,19 @@ var myChart = new Chart(ctx, {
         
        // },
         
-        responsive: true
+        responsive: true,
+        // responsive: {
+        //     rules: [{
+        //         chartOptions: {
+        //             legend: {
+        //                 enabled: false
+        //             }
+        //         },
+        //         condition: {
+        //             maxWidth: 500
+        //         }
+        //     }]
+        // }
     }
 },  
 

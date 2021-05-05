@@ -24,13 +24,13 @@
             <div class="col-xs-12 col-sm-5 col-md-5 col-lg-3 container div-form offset-1 mb-3">
             <form action="" class="form-control row d-flex">
              
-            <div class="col-xs-6 col-md-12">
+            <div class="col-xs-6 col-sm-6 col-md-12">
                 <label class="form-label mt-3 d-none d-md-block" for="seleccion-empleados">Número de empleados actuales</label>
                 <label class="form-label mt-3 d-block d-md-none" for="seleccion-empleados">Nº de empleados</label>
                 <input class="form-control mb-1" type="number" value="100" name="" min="1" id="inputEmpleados" onkeyup="todos();calculoTamano(cuantosEmpleados, queBarrio, cuantosDias, tipoCrecimiento)">
             </div>
 
-            <div class="col-xs-6 col-md-12">
+            <div class="col-xs-6 col-sm-6 col-md-12">
                 <label class="form-label mt-3 d-none d-md-block" for="">Días de trabajo en remoto que quieres implementar</label>
                 <label class="form-label mt-3 d-block d-md-none" for="">Días de trabajo remoto </label>
                 <input class="form-control mb-1" value="3" type="number" min="1" max="5" name="" id="inputDias" onkeyup="todos(); calculoTamano(cuantosEmpleados, queBarrio, cuantosDias, tipoCrecimiento)">
@@ -64,9 +64,9 @@
             </form>
         </div>
 
-            <div class="col-xs-12 col-sm-6 col-md-8 container container-chart" >
+            <div class="col-xs-12 col-sm-6 col-md-7 container container-chart" >
                 <div class="shadow pb-3 px-3 div-chart">
-                    <canvas id="myChart" class="px-3 py-3" width="200" height="160"></canvas>
+                    <canvas id="myChart" class="px-3 py-2" width="200" height="160"></canvas>
                     <div>
                         <div class="d-flex justify-content-around align-items-center mb-4">
                             <!-- <div class="ms-5 anio">Año 1</div> -->
@@ -80,47 +80,6 @@
             
             </div>
     </div>
-    
-
-
-     <!-- FORMULARIO MOBILE -->
-    <!-- <section class="container section-mobile mt-2 d-block d-md-none">
-     <div class="row container justify-content-center div-form-xs">
-        <div class="col-xs-12 col-sm-6 col-md-4 offset-1 container-mobile container mb-4">
-        <form action="" class="form-control form-mobile row d-flex">
-            <div class="col-6">
-            <label class="form-label mt-3" for="seleccion-empleados">Nº de empleados</label>
-            <input class="form-control mb-1" type="number" value="100" name="" min="1" id="inputEmpleadosM" onkeyup="todos();calculoTamano(cuantosEmpleados, queBarrio, cuantosDias, tipoCrecimiento)">
-            </div>
-
-            <div class="col-6">
-                <label class="form-label mt-3" for="">Días trabajo remoto</label>
-                <input class="form-control mb-1" value="3" type="number" min="1" max="5" name="" id="inputDiasM" onkeyup="todos(); calculoTamano(cuantosEmpleados, queBarrio, cuantosDias, tipoCrecimiento)">
-            </div>
-
-            
-            <label class="form-label mt-3" for="seleccion-crecimiento">Crecimiento proyectado</label>
-            <select class="form-select mb-1" value="estable" name="" id="tipoCrecimientoM" onchange="todos();calculoTamano(cuantosEmpleados, queBarrio, cuantosDias, tipoCrecimiento)">
-                
-                <option value="decrecimiento">Decrecimiento</option>
-                <option value="estable">Estable</option>
-                <option value="crecimiento">Crecimiento</option>
-                <option value="supercrecimiento">Supercrecimiento</option>
-
-            </select>
-
-            <label class="form-label mt-3" for="">Barrio</label>
-            <select class="form-select mb-4" value="20" name="" id="inputBarrioM" onchange="todos(); calculoTamano(cuantosEmpleados, queBarrio, cuantosDias, tipoCrecimiento)">
-               
-                <option value="20">Centro</option>
-                <option value="18">Poblenou</option>
-                <option value="15">Gracia/Sarria</option>
-                <option value="16">Otros</option>
-            </select>
-
-        </form>
-    </div>
-</section> -->
 
     <div id="resultados" class="text-center mt-4 mb-5 col-12 container">
     </div>
