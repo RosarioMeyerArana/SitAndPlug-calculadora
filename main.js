@@ -160,8 +160,8 @@ function respuestaAhorro(alquilerTradicional1, gastoOperativo, alquilerSit){
      
     respuesta.innerHTML=`   <div class="titulo-ahorro mb-2" style="color: #33d298">AHORRO TOTAL</div>
                             <div class="container-ahorro"
-                                <div style="color: black">Total ahorro anual: €${ahorroAnio.toLocaleString('es-ES')}</div>
-                                <div style="color: black">Total ahorro a 3 años: €${ahorroTres.toLocaleString('es-ES')}</div>
+                                <div style="color: black ; font-size: 17px">Total ahorro anual: €${ahorroAnio.toLocaleString('es-ES')}</div>
+                                <div style="color: black ; font-size: 17px">Total ahorro a 3 años: €${ahorroTres.toLocaleString('es-ES')}</div>
                             </div>
                             `
 }
