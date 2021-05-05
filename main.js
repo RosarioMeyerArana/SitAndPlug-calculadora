@@ -260,7 +260,7 @@ var myChart = new Chart(ctx, {
     options: {
         onResize: function(myChart, size) {
 
-            var showTicks = (size.height < 140) ? false : true;
+            var noLegend = (size.height < 140) ? false : true;
        
             myChart.options = {
                 scales: {
@@ -286,12 +286,15 @@ var myChart = new Chart(ctx, {
                 },
                    plugins:{
                        legend:{
-                        display: false
+                           display: false
                        }
                    }
-            };
+            }
        
-         },
+          },
+        // onResize: function(myChart, size) {
+        //     myChart.options.plugins.legend.display = (size.height >= 140);
+        // },
 
         scales: {
             x: {
