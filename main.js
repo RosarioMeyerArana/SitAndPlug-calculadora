@@ -198,6 +198,7 @@ function addInversionInicial(datanueva) {
 
 function addCosteAlquiler(datanuevaTrad, datanueva) {
     myChart.data.datasets[1].data[0] = datanuevaTrad
+    myChart.data.datasets[1].data[1] = null
     myChart.data.datasets[2].data[1] = datanueva
     myChart.data.datasets[2].data[0] = null
 
@@ -265,7 +266,7 @@ var myChart = new Chart(ctx, {
     
 
     options: {
-        onResize: function(myChart, size) {
+        onResize: function(myChart) {
        
             myChart.options = {
                 scales: {
@@ -296,15 +297,20 @@ var myChart = new Chart(ctx, {
                        tooltip: {
                         callbacks: {
                             label: function(context) {
-                                var label = context.dataset.label || '';
-        
+                                let label = context.dataset.label || '';
+                                let labelSit = myChart.data.datasets[2].data[0]
+
+                            
                                 if (label) {
                                     label += ': ';
+                                }else if(labelSit == null) {
+                                    labelSit = ""
                                 }
                                 if (context.parsed.y !== null) {
-                                    label += new Intl.NumberFormat('es-ES', { maximumSignificantDigits: 1}).format(context.parsed.y);
+                                    label += new Intl.NumberFormat('de-DE', { maximumSignificantDigits:1 }).format(context.parsed.y);
+                                    return label;
                                 }
-                                return label;
+                                
                             }
                         }
                 }
