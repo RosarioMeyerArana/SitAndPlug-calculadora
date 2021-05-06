@@ -10,6 +10,7 @@ let crecimientoInput = tipoCrecimiento.value
 
 
 
+let gastoOperativo
 let tamanoOficina
 let inversionInicial
 
@@ -78,6 +79,11 @@ function calculoTamano(tomoEmpleados, tomoBarrio, tomoDias, tipoCrecimiento){
 
         alquilerSit = primerAnioSit * (precioPersonaSit * 0.6) * anio
 
+        
+        // INVERSION INICIAL //
+        inversionInicial = (tamanoOficina * 100) + alquilerTradicional;
+        addInversionInicial(inversionInicial)
+
 
         // COSTE OPERATIVO //
         let coste = 6
@@ -87,8 +93,8 @@ function calculoTamano(tomoEmpleados, tomoBarrio, tomoDias, tipoCrecimiento){
         addCosteOperativo(gastoOperativo)
 
         addCosteAlquiler(alquilerTradicional1, alquilerSit)
-        calculoInversion(tamanoOficina, alquilerTradicional)
-        respuestaAhorro(alquilerTradicional1, gastoOperativo, alquilerSit)
+        // calculoInversion(tamanoOficina, alquilerTradicional)
+        respuestaAhorro(alquilerTradicional1, gastoOperativo, alquilerSit,inversionInicial)
         
 
 
@@ -106,6 +112,11 @@ function calculoTamano(tomoEmpleados, tomoBarrio, tomoDias, tipoCrecimiento){
         alquilerSit = primerAnioSit * precioPersonaSit * anio
 
 
+        // INVERSION INICIAL //
+         inversionInicial = (tamanoOficina * 100) + alquilerTradicional;
+         addInversionInicial(inversionInicial)
+
+
         // COSTE OPERATIVO //
         let coste = 6
 
@@ -114,8 +125,8 @@ function calculoTamano(tomoEmpleados, tomoBarrio, tomoDias, tipoCrecimiento){
         addCosteOperativo(gastoOperativo)
 
         addCosteAlquiler(alquilerTradicional1, alquilerSit)
-        calculoInversion(tamanoOficina, alquilerTradicional)
-        respuestaAhorro(alquilerTradicional1, gastoOperativo, alquilerSit)
+        // calculoInversion(tamanoOficina, alquilerTradicional)
+        respuestaAhorro(alquilerTradicional1, gastoOperativo, alquilerSit,inversionInicial)
 
 
     }else if (tipoCrecimiento.value === "alta"){
@@ -131,6 +142,12 @@ function calculoTamano(tomoEmpleados, tomoBarrio, tomoDias, tipoCrecimiento){
 
         alquilerSit = primerAnioSit * (precioPersonaSit * 1.2) * anio
 
+
+        // INVERSION INICIAL //
+        inversionInicial = (tamanoOficina * 100) + alquilerTradicional;
+        addInversionInicial(inversionInicial)
+
+
         // COSTE OPERATIVO //
         let coste = 6
     
@@ -139,8 +156,8 @@ function calculoTamano(tomoEmpleados, tomoBarrio, tomoDias, tipoCrecimiento){
         addCosteOperativo(gastoOperativo)
 
         addCosteAlquiler(alquilerTradicional1, alquilerSit)
-        calculoInversion(tamanoOficina, alquilerTradicional)
-        respuestaAhorro(alquilerTradicional1, gastoOperativo, alquilerSit)
+        // calculoInversion(tamanoOficina, alquilerTradicional)
+        respuestaAhorro(alquilerTradicional1, gastoOperativo, alquilerSit,inversionInicial)
         
         
     }else{
@@ -152,35 +169,21 @@ function calculoTamano(tomoEmpleados, tomoBarrio, tomoDias, tipoCrecimiento){
 let respuesta = document.getElementById('resultados');
 
 
-function respuestaAhorro(alquilerTradicional1, gastoOperativo, alquilerSit){
+function respuestaAhorro(alquilerTradicional1, gastoOperativo, alquilerSit, inversionInicial ){
 
-   let ahorroAnio = (alquilerTradicional1 + gastoOperativo ) - alquilerSit;
-   let ahorroTres = ahorroAnio*3;
+   let ahorroAnio = (alquilerTradicional1 + gastoOperativo + inversionInicial ) - alquilerSit;
+   let ahorroTres = (ahorroAnio - inversionInicial)*3;
 
      
-    respuesta.innerHTML=`   <div class="titulo-ahorro mb-2" style="color: #33d298">AHORRO TOTAL</div>
+    respuesta.innerHTML=`   <div class="titulo-ahorro" style="color: #33d298">TU AHORRO TOTAL</div>
                             <div class="container-ahorro"
-                                <div style="color: black ; font-size: 17px">Total ahorro anual: €${ahorroAnio.toLocaleString('es-ES')}</div>
-                                <div style="color: black ; font-size: 17px">Total ahorro a 3 años: €${ahorroTres.toLocaleString('es-ES')}</div>
+                                <div style="color: black; font-size: 17px">&#9989 <strong>€${ahorroAnio.toLocaleString('es-ES')}</strong> el primer año</div>
+                                <div style="color: black; font-size: 17px; margin-bottom: 1rem">&#9989 <strong>€${ahorroTres.toLocaleString('es-ES')}</strong> a 3 años</div>
                             </div>
                             `
 }
 
 
-let gastoOperativo
-
-
-// &#9989
-// CALCULO COSTE OPERATIVO //
-// function costeOperativo(tamanoOficina){
-//     let coste = 6
-//     let anio = 12
-
-//     gastoOperativo = coste*tamanoOficina*anio
-
-//     addCosteOperativo(gastoOperativo, null)
-
-// }
 
 
 
@@ -196,6 +199,8 @@ function addInversionInicial(datanueva) {
 function addCosteAlquiler(datanuevaTrad, datanueva) {
     myChart.data.datasets[1].data[0] = datanuevaTrad
     myChart.data.datasets[2].data[1] = datanueva
+    myChart.data.datasets[2].data[0] = null
+
 
     myChart.update();
     
@@ -219,11 +224,11 @@ var ctx = document.getElementById('myChart').getContext('2d');
 var myChart = new Chart(ctx, {
     type: 'bar',
     data: {
-        labels: ['Tradicional', 'SitandPlug'],
+        labels: ['Oficina Tradicional', 'Oficina SitandPlug'],
         datasets: [{
             label: 'Inversion Inicial',
             data: [],
-           // barThickness: 51,
+            barThickness: 100,
             backgroundColor: [
                 '#D90429',
                 '#D90429'
@@ -231,7 +236,7 @@ var myChart = new Chart(ctx, {
             {
             label: 'Coste de Alquiler tradicional',
             data: [],
-          
+            barThickness: 100,
             backgroundColor: [
                 '#F24C00',
                 '#F24C00'
@@ -239,7 +244,7 @@ var myChart = new Chart(ctx, {
         },{
             label: 'Coste Sitandplug*',
             data: [],
-          
+            barThickness: 100,
             backgroundColor: [
                 '#33d298',
                 '#33d298'
@@ -247,7 +252,7 @@ var myChart = new Chart(ctx, {
         },{
             label: 'Costes Operativos',
             data: [],
-          
+            barThickness: 100,
             backgroundColor: [
                 '#F9C784',
                 '#F9C784'
@@ -261,8 +266,6 @@ var myChart = new Chart(ctx, {
 
     options: {
         onResize: function(myChart, size) {
-
-            var noLegend = (size.height < 140) ? false : true;
        
             myChart.options = {
                 scales: {
@@ -288,16 +291,28 @@ var myChart = new Chart(ctx, {
                 },
                    plugins:{
                        legend:{
-                           display: false
-                       }
+                           display: false,
+                       },
+                       tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                var label = context.dataset.label || '';
+        
+                                if (label) {
+                                    label += ': ';
+                                }
+                                if (context.parsed.y !== null) {
+                                    label += new Intl.NumberFormat('es-ES', { maximumSignificantDigits: 1}).format(context.parsed.y);
+                                }
+                                return label;
+                            }
+                        }
+                }
                    }
             }
        
           },
-        // onResize: function(myChart, size) {
-        //     myChart.options.plugins.legend.display = (size.height >= 140);
-        // },
-
+        
         scales: {
             x: {
                 grid:{
@@ -313,6 +328,7 @@ var myChart = new Chart(ctx, {
                 ticks: {
                     min: 0,
                     count: 5
+
                 },
                 
                 beginAtZero: true,
@@ -330,19 +346,36 @@ var myChart = new Chart(ctx, {
                     },
                     maxWidth:170
                 },
-                // tooltip:{
-                //     filter: function (dataset, data) {
-                           
-
-                //                   if ((valor0 == 0) || (valor1 == 0) || (valor2 == 0)){
-                //                           return false;
-                //                       } else {
-                //                           return true;
-                //                       }
-                //                  }
-                //         }
+                    
+                tooltip: {
+                    callbacks: {
+                        label: function(context) {
+                            var label = context.dataset.label || '';
+    
+                            if (label) {
+                                label += ': ';
+                            }
+                            if (context.parsed.y !== null) {
+                                label += new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(context.parsed.y);
+                            }
+                            return label;
+                        }
+                    }
+            }
             },
-        //  tooltips: {
+        
+        responsive: true,
+            }
+},  
+
+);
+
+calculoTamano(inputEmpleados, inputBarrio, inputDias, tipoCrecimiento)
+
+
+
+
+//  tooltips: {
         //         mode: 'index',
         //         intersect: false,
         //         filter: function (tooltipItem) {
@@ -363,26 +396,28 @@ var myChart = new Chart(ctx, {
         // interaction: {
         //     mode: 'nearest',
         //     axis: 'y'
-        // }, 
-      //  plugins: {
-                // callbacks: {
-                //     label: function(context) {
-                //         var label = context.dataset.label || '';
+        // },
+        
 
-                //         if (label) {
-                //             label += ':';
+
+
+
+ 
+                // tooltip:{
+                //     filter: function (dataset, data) {
+                           
+
+                //                   if ((valor0 == 0) || (valor1 == 0) || (valor2 == 0)){
+                //                           return false;
+                //                       } else {
+                //                           return true;
+                //                       }
+                //                  }
                 //         }
-                //         if (context.parsed.y !== null) {
-                //             label += new Intl.NumberFormat('en-US', { style: 'currency', currency: 'EUR' }).format(context.parsed.y);
-                //         }
-                //         return label
-                //         }
-                //     }
-        
-       // },
-        
-        responsive: true,
-        // responsive: {
+
+
+
+                // responsive: {
         //     rules: [{
         //         chartOptions: {
         //             legend: {
@@ -394,10 +429,3 @@ var myChart = new Chart(ctx, {
         //         }
         //     }]
         // }
-    }
-},  
-
-);
-
-calculoTamano(inputEmpleados, inputBarrio, inputDias, tipoCrecimiento)
-

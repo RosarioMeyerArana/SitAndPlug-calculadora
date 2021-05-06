@@ -15,7 +15,7 @@
 }
 
 .titulo-ahorro{
-    font-size: 2.3rem !important;
+    font-size: 2rem !important;
 }
 
 body{
@@ -34,7 +34,6 @@ body{
 
 #resultados{
     font-family: 'Montserrat', sans-serif;
-    font-weight: bold;
     padding: 1rem;
 }
 
@@ -60,10 +59,6 @@ body{
 
 /* PANTALLA XS */
 @media (max-width: 575.98px) {
-
-    #resultados{
-        /* width: 90%; */
-    }
 
     .texto-aclaracion{
         font-size: 12px;
