@@ -65,47 +65,42 @@ body{
     }
     .titulo-ahorro{
         font-weight: bolder;
+        font-size: 1.7rem !important;
+        margin-bottom: .5rem
     }
   }
 
   /* PANTALLA S */
   @media (min-width: 576px) and (max-width: 767.98px) {
-    .section-mobile{
-        position: relative;
-        left: -40px;
-    }
-
-    .container-mobile{
-        margin: 0;  
-    }
-
-    .form-mobile{
-        font-size: 11px;
-        margin-top: 25px;
-    }
-
-    .form-mobile input{
-        font-size: .8rem;
-    }
-
-    .form-mobile select{
-        font-size: .8rem;
-    }
 
     .form-label{
         font-size: .65rem;
     }
 
-    .div-chart-mobile{
-        width: 150%;
+    form input {
+        font-size: .8rem !important 
+    }
+
+    form select{
+        font-size: .8rem !important
+    }
+
+    .titulo-ahorro{
+        font-weight: bolder;
+        font-size: 1.12rem !important;
+        margin-bottom: .5rem
+    }
+
+    .container-ahorro{
+        font-size: .85rem !important ;
     }
   }
 
   /* PANTALLA M */
   @media (min-width: 768px) and (max-width: 991.98px) {
     .div-form{
-        margin: 0;
-        margin-right: 0 !important;
+         margin-left: 5%;
+         margin-right: 0 ;
     }
 
     .div-form label{
@@ -132,12 +127,18 @@ body{
         font-size: 12px;
     }
 
+    .titulo-ahorro{
+        font-size: 1.5rem !important;
+        font-weight: bolder;
+        margin-bottom: .5rem ;
+    }
+
   }
 
   /* PANTALLA L */
   @media (min-width: 992px) and (max-width: 1199.98px) {
     .texto-aclaracion{
-         margin-top: 25px; 
+        margin-top: 20px; 
         font-size: 10px;
     }
 
@@ -166,11 +167,12 @@ body{
     }
 
     #resultados{
-        /* width: 70%; */
         font-family: 'Montserrat', sans-serif;
+        margin-bottom: 0 !important;
     }
     .titulo-ahorro{
         font-weight: bolder;
+        font-size: 1.7rem !important; 
     }
   }
 
@@ -184,7 +186,6 @@ body{
 
     .div-form{
     margin: 0;
-    /* margin-top: 1rem; */
     }
 
     .div-form label :first-child{
@@ -214,7 +215,6 @@ body{
     }
 
     #resultados{
-        /* width: 66%; */
         font-family: 'Montserrat', sans-serif;
     }
     .titulo-ahorro{

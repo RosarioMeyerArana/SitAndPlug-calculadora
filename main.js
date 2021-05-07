@@ -178,7 +178,7 @@ function respuestaAhorro(alquilerTradicional1, gastoOperativo, alquilerSit, inve
     respuesta.innerHTML=`   <div class="titulo-ahorro" style="color: #33d298">TU AHORRO TOTAL</div>
                             <div class="container-ahorro"
                                 <div style="color: black; font-size: 17px">&#9989 <strong>€${ahorroAnio.toLocaleString('es-ES')}</strong> el primer año</div>
-                                <div style="color: black; font-size: 17px; margin-bottom: 1rem">&#9989 <strong>€${ahorroTres.toLocaleString('es-ES')}</strong> a 3 años</div>
+                                <div class="container-ahorro" style="color: black; font-size: 17px; margin-bottom: 1rem">&#9989 <strong>€${ahorroTres.toLocaleString('es-ES')}</strong> a 3 años</div>
                             </div>
                             `
 }
@@ -229,7 +229,8 @@ var myChart = new Chart(ctx, {
         datasets: [{
             label: 'Inversion Inicial',
             data: [],
-            barThickness: 100,
+            barPercentage: 0.8,
+           // barThickness: 100,
             backgroundColor: [
                 '#D90429',
                 '#D90429'
@@ -237,7 +238,8 @@ var myChart = new Chart(ctx, {
             {
             label: 'Coste de Alquiler tradicional',
             data: [],
-            barThickness: 100,
+            barPercentage: 0.8,
+           // barThickness: 100,
             backgroundColor: [
                 '#F24C00',
                 '#F24C00'
@@ -245,7 +247,8 @@ var myChart = new Chart(ctx, {
         },{
             label: 'Coste Sitandplug*',
             data: [],
-            barThickness: 100,
+            barPercentage: 0.8,
+           // barThickness: 100,
             backgroundColor: [
                 '#33d298',
                 '#33d298'
@@ -253,7 +256,8 @@ var myChart = new Chart(ctx, {
         },{
             label: 'Costes Operativos',
             data: [],
-            barThickness: 100,
+            barPercentage: 0.8,
+          //  barThickness: 100,
             backgroundColor: [
                 '#F9C784',
                 '#F9C784'
@@ -351,87 +355,14 @@ var myChart = new Chart(ctx, {
                         },
                     },
                     maxWidth:170
-                },
-                    
-                tooltip: {
-                    callbacks: {
-                        label: function(context) {
-                            var label = context.dataset.label || '';
-    
-                            if (label) {
-                                label += ': ';
-                            }
-                            if (context.parsed.y !== null) {
-                                label += new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(context.parsed.y);
-                            }
-                            return label;
-                        }
-                    }
-            }
+                }
             },
         
         responsive: true,
+        maintainAspectRatio: true
             }
 },  
 
 );
 
 calculoTamano(inputEmpleados, inputBarrio, inputDias, tipoCrecimiento)
-
-
-
-
-//  tooltips: {
-        //         mode: 'index',
-        //         intersect: false,
-        //         filter: function (tooltipItem) {
-        //             let hola = data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index]
-
-        //             return tooltipItem.datasetIndex == 0;
-        //             }
-                // filter: function () {
-                //     let value0 = myChart.data.datasets[0].data[1];
-                //     console.log(value0)
-                //     if (value0 == 0) {
-                //         return false;
-                //     } else {
-                //         return true;
-                //     }
-                // }
-        // },
-        // interaction: {
-        //     mode: 'nearest',
-        //     axis: 'y'
-        // },
-        
-
-
-
-
- 
-                // tooltip:{
-                //     filter: function (dataset, data) {
-                           
-
-                //                   if ((valor0 == 0) || (valor1 == 0) || (valor2 == 0)){
-                //                           return false;
-                //                       } else {
-                //                           return true;
-                //                       }
-                //                  }
-                //         }
-
-
-
-                // responsive: {
-        //     rules: [{
-        //         chartOptions: {
-        //             legend: {
-        //                 enabled: false
-        //             }
-        //         },
-        //         condition: {
-        //             maxWidth: 500
-        //         }
-        //     }]
-        // }
