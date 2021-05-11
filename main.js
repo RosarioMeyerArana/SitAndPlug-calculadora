@@ -173,13 +173,6 @@ function respuestaAhorro(alquilerTradicional1, gastoOperativo, alquilerSit, inve
 
    let ahorroAnio = alquilerTradicional1 + gastoOperativo + inversionInicial  - alquilerSit;
    let ahorroTres = ahorroAnio + (alquilerTradicional1*2) + (gastoOperativo*2) - (alquilerSit*2)
-
-   console.log('Alquiler tradicional ' + alquilerTradicional1)
-   console.log('gasto operativo '+ gastoOperativo)
-   console.log('inversion inicial ' + inversionInicial)
-   console.log('alquiler sit and plug ' + alquilerSit)
-
-   console.log('ahorro a 3 años ' + ahorroTres)
      
     respuesta.innerHTML=`   <div class="titulo-ahorro" style="color: #33d298">TU AHORRO TOTAL</div>
                             <div class="container-ahorro"
@@ -236,25 +229,25 @@ var myChart = new Chart(ctx, {
             label: 'Inversion Inicial',
             data: [],
             barPercentage: 0.6,
-           // barThickness: 100,
             backgroundColor: [
-                '#D90429',
-                '#D90429'
+                '#6c757d'
+                // '#D90429',
+                // '#D90429'
             ]},
             {
             label: 'Coste de Alquiler tradicional',
             data: [],
             barPercentage: 0.6,
-           // barThickness: 100,
             backgroundColor: [
-                '#F24C00',
-                '#F24C00'
+                '#adb5bd'
+                
+                // '#F24C00',
+                // '#F24C00'
             ],
         },{
             label: 'Coste Sitandplug*',
             data: [],
             barPercentage: 0.6,
-           // barThickness: 100,
             backgroundColor: [
                 '#33d298',
                 '#33d298'
@@ -263,11 +256,11 @@ var myChart = new Chart(ctx, {
             label: 'Costes Operativos',
             data: [],
             barPercentage: 0.6,
-          //  barThickness: 100,
-            backgroundColor: [
-                '#F9C784',
-                '#F9C784'
-            ],
+            backgroundColor:
+            '#ced4da'
+                // '#F9C784',
+                // '#F9C784'
+            ,
         }
     
     ]

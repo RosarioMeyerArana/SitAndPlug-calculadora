@@ -220,6 +220,12 @@ body{
     .titulo-ahorro{
         font-family: 'Montserrat', sans-serif;
         font-weight: bolder;
+        margin-bottom: 7px;
+    }
+
+    .container-ahorro{
+        font-size: 1.5rem !important;
+        line-height: 1.7;
     }
 
   }
