@@ -68,6 +68,9 @@ body{
         font-size: 1.7rem !important;
         margin-bottom: .5rem
     }
+    .container-ahorro{
+        font-size: 1.3rem !important;
+    }
   }
 
   /* PANTALLA S */
@@ -99,27 +102,31 @@ body{
   /* PANTALLA M */
   @media (min-width: 768px) and (max-width: 991.98px) {
     .div-form{
-         margin-left: 5%;
+         margin-left: 3%;
          margin-right: 0 ;
+         padding-right: 0 ;
     }
 
     .div-form label{
-        font-size: .9rem;
+        font-size: .8rem;
     }
 
     .container-chart{
-        margin: 0;
+        margin-right: 30px;
     }
 
     .div-container{
         display: flex;
         justify-content: flex-start !important;
+        margin-right: 20px;
+        margin-left: 0 !important;
     }
 
     .div-chart{
         padding-top: 6%;
         width: 120%;
         height: 43.5vh !important;
+        
     }
 
     .texto-aclaracion{
