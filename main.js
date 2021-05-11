@@ -74,11 +74,14 @@ function calculoTamano(tomoEmpleados, tomoBarrio, tomoDias, tipoCrecimiento){
         tamanoOficina = primerAnio * 10
         
         let alquilerTradicional = (tomoBarrio * 0.6) * tamanoOficina
+       
 
         alquilerTradicional1 = (tomoBarrio * 0.6) * tamanoOficina * anio;
+        
 
         alquilerSit = primerAnioSit * (precioPersonaSit * 0.6) * anio
-
+        addCosteAlquiler(alquilerTradicional1, alquilerSit)
+        
         
         // INVERSION INICIAL //
         inversionInicial = (tamanoOficina * 100) + alquilerTradicional;
@@ -92,8 +95,7 @@ function calculoTamano(tomoEmpleados, tomoBarrio, tomoDias, tipoCrecimiento){
     
         addCosteOperativo(gastoOperativo)
 
-        addCosteAlquiler(alquilerTradicional1, alquilerSit)
-        // calculoInversion(tamanoOficina, alquilerTradicional)
+
         respuestaAhorro(alquilerTradicional1, gastoOperativo, alquilerSit,inversionInicial)
         
 
@@ -107,10 +109,10 @@ function calculoTamano(tomoEmpleados, tomoBarrio, tomoDias, tipoCrecimiento){
         let alquilerTradicional = tomoBarrio * tamanoOficina
 
         let alquilerTradicional1 = tomoBarrio * tamanoOficina * anio;
-        
-
+       
         alquilerSit = primerAnioSit * precioPersonaSit * anio
-
+        addCosteAlquiler(alquilerTradicional1, alquilerSit)
+    
 
         // INVERSION INICIAL //
          inversionInicial = (tamanoOficina * 100) + alquilerTradicional;
@@ -124,7 +126,6 @@ function calculoTamano(tomoEmpleados, tomoBarrio, tomoDias, tipoCrecimiento){
 
         addCosteOperativo(gastoOperativo)
 
-        addCosteAlquiler(alquilerTradicional1, alquilerSit)
         // calculoInversion(tamanoOficina, alquilerTradicional)
         respuestaAhorro(alquilerTradicional1, gastoOperativo, alquilerSit,inversionInicial)
 
@@ -138,15 +139,16 @@ function calculoTamano(tomoEmpleados, tomoBarrio, tomoDias, tipoCrecimiento){
         let alquilerTradicional = (tomoBarrio * 1.2) * tamanoOficina
 
         let alquilerTradicional1 = (tomoBarrio * 1.2) * tamanoOficina * anio;
-        
 
         alquilerSit = primerAnioSit * (precioPersonaSit * 1.2) * anio
+        
+        addCosteAlquiler(alquilerTradicional1, alquilerSit)
+
 
 
         // INVERSION INICIAL //
         inversionInicial = (tamanoOficina * 100) + alquilerTradicional;
         addInversionInicial(inversionInicial)
-
 
         // COSTE OPERATIVO //
         let coste = 6
@@ -155,8 +157,6 @@ function calculoTamano(tomoEmpleados, tomoBarrio, tomoDias, tipoCrecimiento){
     
         addCosteOperativo(gastoOperativo)
 
-        addCosteAlquiler(alquilerTradicional1, alquilerSit)
-        // calculoInversion(tamanoOficina, alquilerTradicional)
         respuestaAhorro(alquilerTradicional1, gastoOperativo, alquilerSit,inversionInicial)
         
         
@@ -171,9 +171,15 @@ let respuesta = document.getElementById('resultados');
 
 function respuestaAhorro(alquilerTradicional1, gastoOperativo, alquilerSit, inversionInicial ){
 
-   let ahorroAnio = (alquilerTradicional1 + gastoOperativo + inversionInicial ) - alquilerSit;
-   let ahorroTres = (ahorroAnio - inversionInicial)*3;
+   let ahorroAnio = alquilerTradicional1 + gastoOperativo + inversionInicial  - alquilerSit;
+   let ahorroTres = ahorroAnio + (alquilerTradicional1*2) + (gastoOperativo*2) - (alquilerSit*2)
 
+   console.log('Alquiler tradicional ' + alquilerTradicional1)
+   console.log('gasto operativo '+ gastoOperativo)
+   console.log('inversion inicial ' + inversionInicial)
+   console.log('alquiler sit and plug ' + alquilerSit)
+
+   console.log('ahorro a 3 años ' + ahorroTres)
      
     respuesta.innerHTML=`   <div class="titulo-ahorro" style="color: #33d298">TU AHORRO TOTAL</div>
                             <div class="container-ahorro"
@@ -229,7 +235,7 @@ var myChart = new Chart(ctx, {
         datasets: [{
             label: 'Inversion Inicial',
             data: [],
-            barPercentage: 0.8,
+            barPercentage: 0.6,
            // barThickness: 100,
             backgroundColor: [
                 '#D90429',
@@ -238,7 +244,7 @@ var myChart = new Chart(ctx, {
             {
             label: 'Coste de Alquiler tradicional',
             data: [],
-            barPercentage: 0.8,
+            barPercentage: 0.6,
            // barThickness: 100,
             backgroundColor: [
                 '#F24C00',
@@ -247,7 +253,7 @@ var myChart = new Chart(ctx, {
         },{
             label: 'Coste Sitandplug*',
             data: [],
-            barPercentage: 0.8,
+            barPercentage: 0.6,
            // barThickness: 100,
             backgroundColor: [
                 '#33d298',
@@ -256,7 +262,7 @@ var myChart = new Chart(ctx, {
         },{
             label: 'Costes Operativos',
             data: [],
-            barPercentage: 0.8,
+            barPercentage: 0.6,
           //  barThickness: 100,
             backgroundColor: [
                 '#F9C784',
@@ -311,7 +317,7 @@ var myChart = new Chart(ctx, {
                                     labelSit = ""
                                 }
                                 if (context.parsed.y !== null) {
-                                    label += new Intl.NumberFormat('de-DE', { maximumSignificantDigits:1 }).format(context.parsed.y);
+                                    label += new Intl.NumberFormat('de-DE', { maximumSignificantDigits:5 }).format(context.parsed.y);
                                     return label;
                                 }
                                 
