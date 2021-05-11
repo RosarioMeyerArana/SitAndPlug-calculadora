@@ -8,8 +8,6 @@ let inputDias = document.getElementById("inputDias").value;
 let tipoCrecimiento = document.getElementById("tipoCrecimiento");
 let crecimientoInput = tipoCrecimiento.value
 
-
-
 let gastoOperativo
 let tamanoOficina
 let inversionInicial
@@ -126,7 +124,6 @@ function calculoTamano(tomoEmpleados, tomoBarrio, tomoDias, tipoCrecimiento){
 
         addCosteOperativo(gastoOperativo)
 
-        // calculoInversion(tamanoOficina, alquilerTradicional)
         respuestaAhorro(alquilerTradicional1, gastoOperativo, alquilerSit,inversionInicial)
 
 
