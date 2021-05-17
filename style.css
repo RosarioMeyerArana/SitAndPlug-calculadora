@@ -9,6 +9,11 @@
     height: 50% !important;
 }
 
+.btn-submit{
+    background-color: #33d298;
+    color: white;
+}
+
 
 .ahorro{
     padding-bottom: 1rem !important;
