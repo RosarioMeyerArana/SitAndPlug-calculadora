@@ -11,7 +11,12 @@
 
 .btn-submit{
     background-color: #33d298;
+    
+}
+.btn-submit a{
     color: white;
+    text-decoration: none;
+
 }
 
 
